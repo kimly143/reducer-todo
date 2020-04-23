@@ -1,0 +1,29 @@
+
+export const initialState = {
+	todos: [
+		{
+			item: 'Learn about reducers',
+			completed: false,
+			id: 1
+        },
+        {
+			item: 'Learn to sew a mask',
+			completed: true,
+			id: 2
+        },
+        {
+			item: 'Make a mask',
+			completed: true,
+			id: 3
+        },
+        {
+			item: 'Finish reducers project',
+			completed: false,
+			id: 4
+		}
+	]
+};
+
+export default function reducer(state, action) {
+	return state;
+}
