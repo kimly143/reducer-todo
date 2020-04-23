@@ -12,8 +12,8 @@ function App() {
 	console.log(state);
 	return (
 		<Container className="App">
-			<Typography component="div" style={{ backgroundColor: '#cfe8fc', width: '50vw', padding: '2vw', margin: '10vh auto', opacity: '0.8'}}>
-				<h1>To do list</h1>
+			<Typography component="div" style={{ backgroundColor: '#cfe8fc', width: '50vw', padding: '2vw', margin: '10vh auto', opacity: '0.8',}}>
+				<h1 style={{color:'#f50057'}}>To do list</h1>
 				<TodoList todos={state.todos} dispatch={dispatch} />
 				<TodoForm dispatch={dispatch} />
 			</Typography>

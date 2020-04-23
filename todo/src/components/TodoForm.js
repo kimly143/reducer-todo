@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { Button , TextField } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 
 export default function TodoForm(props) {
-    const [ newItem, setNewItem ] = useState('');
-    
+	const [ newItem, setNewItem ] = useState('');
+
 	return (
 		<div>
-			<TextField id="outlined-basic" label="New item" variant="outlined" >
-
+			{/* <TextField id="outlined-basic" label="New item" variant="outlined" > */}
+			<TextField id="standard-basic" label="New item">
 				value={newItem}
 				onChange={(event) => {
 					setNewItem(event.target.value);
 				}}
 			</TextField>
-				<br/>
 			<Button
+				style={{ margin: '2vh' }}
 				variant="contained"
 				color="primary"
 				onClick={() => {
@@ -26,8 +26,9 @@ export default function TodoForm(props) {
 				Add Todo Item
 			</Button>
 			<Button
+				style={{ margin: '1vh auto 2vh auto' }}
 				variant="contained"
-				color="primary"
+				color="secondary"
 				onClick={() => {
 					// dispatch is a fn take an object
 					props.dispatch({ type: 'CLEAR_COMPLETED', id: props.id });
