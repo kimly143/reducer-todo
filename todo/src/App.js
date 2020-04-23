@@ -6,12 +6,12 @@ import TodoForm from './components/TodoForm';
 
 function App() {
 	const [ state, dispatch ] = useReducer(reducer, initialState);
-
+	console.log(state);
 	return (
 		<div className="App">
 			<h1>To do list</h1>
-			<TodoList todos={state.todos} />
-      <TodoForm dispatch={dispatch}/>
+			<TodoList todos={state.todos} dispatch={dispatch}/>
+			<TodoForm dispatch={dispatch} />
 		</div>
 	);
 }

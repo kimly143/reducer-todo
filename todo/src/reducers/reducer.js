@@ -25,15 +25,31 @@ export const initialState = {
 
 export default function reducer(state, action) {
 	switch (action.type) {
-        case "ADD_ITEM" : 
-        return {
-            ...state,
-            todos: [...state.todos, {
-                item: action.item,
-                completed: false,
-                id: new Date()
-            }] 
-        }
+		case 'ADD_ITEM':
+			return {
+				...state,
+				todos: [
+					...state.todos,
+					{
+						item: action.item,
+						completed: false,
+						id: new Date()
+					}
+				]
+			};
+		case 'TOGGLE_COMPLETE':
+			return {
+				...state,
+				todos: state.todos.map((todo) => {
+					if (todo.id === action.id) {
+						return {
+							...todo,
+							completed: !todo.completed
+						};
+					}
+					return todo;
+				})
+			};
 		default:
 			return state;
 	}

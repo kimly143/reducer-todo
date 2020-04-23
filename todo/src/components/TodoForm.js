@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Button } from '@material-ui/core';
 
 export default function TodoForm(props) {
-	const [ newItem, setNewItem ] = useState('');
+    const [ newItem, setNewItem ] = useState('');
+    
 	return (
 		<div>
 			<input
@@ -10,15 +12,18 @@ export default function TodoForm(props) {
 					setNewItem(event.target.value);
 				}}
 			/>
-			<button
+
+			<Button
+				variant="contained"
+				color="primary"
 				onClick={() => {
 					// dispatch is a fn take an object
-                    props.dispatch({ type: 'ADD_ITEM', item: newItem });
-                    setNewItem("");
+					props.dispatch({ type: 'ADD_ITEM', item: newItem });
+					setNewItem('');
 				}}
 			>
 				Add Todo Item
-			</button>
+			</Button>
 		</div>
 	);
 }
