@@ -1,22 +1,21 @@
-
 export const initialState = {
 	todos: [
 		{
 			item: 'Learn about reducers',
 			completed: false,
 			id: 1
-        },
-        {
+		},
+		{
 			item: 'Learn to sew a mask',
 			completed: true,
 			id: 2
-        },
-        {
+		},
+		{
 			item: 'Make a mask',
 			completed: true,
 			id: 3
-        },
-        {
+		},
+		{
 			item: 'Finish reducers project',
 			completed: false,
 			id: 4
@@ -25,5 +24,17 @@ export const initialState = {
 };
 
 export default function reducer(state, action) {
-	return state;
+	switch (action.type) {
+        case "ADD_ITEM" : 
+        return {
+            ...state,
+            todos: [...state.todos, {
+                item: action.item,
+                completed: false,
+                id: new Date()
+            }] 
+        }
+		default:
+			return state;
+	}
 }
