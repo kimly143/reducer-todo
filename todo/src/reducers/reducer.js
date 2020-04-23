@@ -50,6 +50,11 @@ export default function reducer(state, action) {
 					return todo;
 				})
 			};
+		case 'CLEAR_COMPLETED':
+			return {
+				...state,
+				todos: state.todos.filter((todo) => todo.completed !== true)
+			};
 		default:
 			return state;
 	}
