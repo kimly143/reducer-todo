@@ -7,12 +7,13 @@ export default function TodoForm(props) {
 	return (
 		<div>
 			{/* <TextField id="outlined-basic" label="New item" variant="outlined" > */}
-			<TextField id="standard-basic" label="New item">
+			<TextField id="standard-basic" label="New item"
 				value={newItem}
 				onChange={(event) => {
 					setNewItem(event.target.value);
+					// console.log(newItem);
 				}}
-			</TextField>
+			/>
 			<Button
 				style={{ margin: '2vh' }}
 				variant="contained"
@@ -20,11 +21,12 @@ export default function TodoForm(props) {
 				onClick={() => {
 					// dispatch is a fn take an object
 					props.dispatch({ type: 'ADD_ITEM', item: newItem });
+
 					setNewItem('');
 				}}
 			>
 				Add Todo Item
-			</Button>
+			</Button> <br/>
 			<Button
 				style={{ margin: '1vh auto 2vh auto' }}
 				variant="contained"
