@@ -6,7 +6,6 @@ export default function TodoForm(props) {
 
 	return (
 		<div>
-			{/* <TextField id="outlined-basic" label="New item" variant="outlined" > */}
 			<TextField id="standard-basic" label="New item"
 				value={newItem}
 				onChange={(event) => {

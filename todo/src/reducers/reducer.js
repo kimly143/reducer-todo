@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const initialState = {
 	todos: [
 		{
@@ -8,12 +10,16 @@ export const initialState = {
 		{
 			item: 'Learn to sew a mask',
 			completed: true,
-			id: 2
+			id: 2,
+			// subtract 2 weeks from current date using moment
+			completedAt: moment().subtract(2, 'weeks').toDate()
 		},
 		{
 			item: 'Make a mask',
 			completed: true,
-			id: 3
+			id: 3,
+			// subtract 6 days from current date using moment
+			completedAt: moment().subtract(6, 'days').toDate()
 		},
 		{
 			item: 'Finish reducers project',
@@ -44,7 +50,9 @@ export default function reducer(state, action) {
 					if (todo.id === action.id) {
 						return {
 							...todo,
-							completed: !todo.completed
+                            completed: !todo.completed,
+                            // if item already complete, we un completed it, we delete the date
+							completedAt: todo.completed ? null : new Date()
 						};
 					}
 					return todo;

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import FromNow from './FromNow';
+import { Button, TextField } from '@material-ui/core';
+
 
 export default function Todo(props) {
 	return (
@@ -15,7 +16,8 @@ export default function Todo(props) {
 					props.dispatch({ type: 'TOGGLE_COMPLETE', id: props.id });
 				}}
 			/>
-			{props.item}
+            {props.item}
+            <FromNow date={props.completedAt} style={{color: 'cyan', opacity: '0.7'}}/>
 		</div>
 	);
 }
