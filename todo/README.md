@@ -86,7 +86,7 @@ x Write the `case` in your reducer for filtering completed todos
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-- Add the moment library to show in "human speak" when a todo was completed
+x Add the moment library to show in "human speak" when a todo was completed
 - Add a property on the todos for when a todo should be completed by. Then display that a todo is "overdue" if it has not been completed by its due date
 - Add "tags" to your todos, and display them with your todo list
 X Have fun with the styling. Make this something you'd be proud to show off!

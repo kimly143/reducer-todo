@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import FromNow from './FromNow';
-import { Button, TextField } from '@material-ui/core';
 
 
 export default function Todo(props) {
