@@ -16,19 +16,6 @@ export default function Todo(props) {
 				}}
 			/>
 			{props.item}
-
-			{/* <Checkbox
-				checked={props.completed}
-				color="primary"
-				inputProps={{ 'aria-label': 'secondary checkbox' }}
-				onChange={() => {
-					// dispatch is a fn take an object
-					props.dispatch({ type: 'TOGGLE_COMPLETE', id: props.id });
-				}}
-			/>
-			<ListItemText id={props.item.id}>
-				{props.item}
-			</ListItemText> */}
 		</div>
 	);
 }
